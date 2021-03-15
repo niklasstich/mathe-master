@@ -2,16 +2,16 @@ name: Build LaTeX into PDF
 on: [push]
 jobs:
   build_latex:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Set up Git
-      uses: actions/checkout@v2
-    - name: Compile LaTeX
-      uses: xu-cheng/latex-action@v2
-      with:
-        root_file: skript1.tex
-    - name: Upload PDF
-      uses: actions/upload-artifact@v2
-      with:
-        name: PDF
-        path: skript1.pdf
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git
+        uses: actions/checkout@v2
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: skript1.tex
+      - name: Upload PDF
+        uses: actions/upload-artifact@v2
+        with:
+          name: PDF
+          path: skript1.pdf
