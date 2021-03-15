@@ -1,3 +1,6 @@
+## Don't upload the pdf files
+*.pdf
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
