@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+\newtheorem{theorem}{Satz}[section]
+
+\title{Mathematik (Master) für Informatik Skript}
+\date{SoSe 2021}
+% Bei PR gerne Namen hinzufügen, wenn du willst
+\author{Niklas Stich, Alexander Walk}
+
+\begin{document}
+\begin{titlepage}
+\maketitle
+\tableofcontents
+\end{titlepage}
+
+
+\section{Komplexe Zahlen und komplexwertige Funktionen}
+\subsection{Historisches}
+16. Jahrhundert: Lösung algebraischer Gleichungen\\
+Gegeben: \(a_{k}\in\mathbb{Q},\quad k=0,\dots,n\in\mathbb{N}_{0}\)
+\begin{theorem}
+\begin{align}
+    a_{n}x^{n}+a_{n-1}x^{n-1}+\dots+a_{1}x+a_{0} &= 0, \quad a_{n}\neq 0 \\
+    \sum_{k=0}^{n}a_{k}^{k} &= 0 \\
+    \underbrace{p(x)}_\text{Polynom n-ten Grades}&=0, \quad p \in \mathbb{Q}[x]
+\end{align}
+\end{theorem}
+Gesucht: Lösung von (1.1) zunächst für $n \leq 3$\\
+bekannt war:
+\begin{enumerate}[(i)]
+    \item $n=1,\quad a_{1}x+a_{0}=0,\quad x=-\dfrac{a_{0}}{a_{1}}$
+    \item $\begin{aligned}[t]
+        n&=2: & a_{2}&x^{2}+a_{1}x+a_{0} & &=0\\
+        a_{2}&\neq 0, & &x^{2}+\dfrac{a_{1}}{a_{2}}x+\dfrac{a_{0}}{a_{2}} & &= 0\\
+        & & &x^{2}+2\dfrac{a_{1}}{2a_{2}}x & &= - \dfrac{a_{0}}{a_{2}}\\
+        & & &x^{2}+2\dfrac{a_{1}}{2a_{2}}x +(\dfrac{a_{1}}{2a_{2}})^2 & &= (\dfrac{a_{1}}{2a_{2}})^2 - \dfrac{a_{0}}{a_{2}}\\
+        & & (&x+\dfrac{a_{1}}{2a_{2}})^2 & &= (\dfrac{a_{1}}{2a_{2}})^2 - \dfrac{a_{0}}{a_{2}}\\
+        & & &x+\dfrac{a_{1}}{2a_{2}} & &=\pm\sqrt{\dfrac{a_{1}^{2}}{4a_{2}^{2}} - \dfrac{4a_{2}a_{0}}{4a_{2}^{2}}}\\
+        & & &x_{1/2} & &=-\dfrac{a_{1}}{2a_{2}}\pm\dfrac{\sqrt{a_{1}^{2}-4a_{0}a_{2}}}{2a_{2}}
+        \end{aligned}$\\
+        Falls $\begin{aligned}
+            &\Delta = a_{1}^{2}-4a_{0}a_{2} & &< 0 & &\Rightarrow \text{keine reelle Lösung}\\
+            &\Delta & &=0 & &\Rightarrow \text{genau eine Lösung}\\
+            &\Delta & &> 0 & &\Rightarrow \text{genau zwei Lösungen}
+        \end{aligned}$\\
+        Die Lösungen sind die Schnittpunkte einer Parabel mit der x-Achse. Die Schnittpunkte existieren für Parabeln mit $\Delta \geq 0$.
+        Aber für ${a_{2}=1,\,a_{0},\,a_{0}=-2}$ ergibt sich: $x_{1/2} = \pm \sqrt{2}\notin \mathbb{Q}$.\\
+        Folge: Erweiterung von $\mathbb{Q}$ zu $\mathbb{Q}(\sqrt{2})=\{a + b\sqrt{2}\,|\,a,b\in\mathbb{Q}\}$.
+        $\mathbb{Q}(\sqrt{2})$ ist ein Körper, in dem wie in $\mathbb{Q}$ gerechnet werden kann und in dem die Lösungen von $x^{2}=2$ existieren.
+
+    \item Für Gleichungen 3. Grades keine allgemeine Lösungsformel, jedoch für spezielle Gleichungen\\
+        Carolano: [WTF???] \\
+        Für bestimmte Gleichungen 3. Grades können alle ihre reellen Lösungen mit Lösungen von $x^{3}=\alpha$ und $x^{2}=\beta=-1$ beschreiben, [... to be continued]
+\end{enumerate}
+\end{document}
