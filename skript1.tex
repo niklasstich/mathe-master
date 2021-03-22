@@ -6,6 +6,7 @@
 \usepackage[ngerman]{babel}
 
 \newtheorem{theorem}{Satz}[section]
+\newtheorem{subtheorem}{Satz}[theorem]
 
 \title{Mathematik (Master) für Informatik Skript}
 \date{SoSe 2021}
@@ -52,9 +53,33 @@ bekannt war:
         Aber für ${a_{2}=1,\,a_{0},\,a_{0}=-2}$ ergibt sich: $x_{1/2} = \pm \sqrt{2}\notin \mathbb{Q}$.\\
         Folge: Erweiterung von $\mathbb{Q}$ zu $\mathbb{Q}(\sqrt{2})=\{a + b\sqrt{2}\,|\,a,b\in\mathbb{Q}\}$.
         $\mathbb{Q}(\sqrt{2})$ ist ein Körper, in dem wie in $\mathbb{Q}$ gerechnet werden kann und in dem die Lösungen von $x^{2}=2$ existieren.
-
-    \item Für Gleichungen 3. Grades keine allgemeine Lösungsformel, jedoch für spezielle Gleichungen\\
+    \item Für Gleichungen 3. Grades keine allgemeine Lösungsformel, jedoch für spezielle Gleichungen\\\\
         Cardano: \\
-        Für bestimmte Gleichungen 3. Grades können alle ihre reellen Lösungen mit Lösungen von $x^{3}=\alpha$ und $x^{2}=\beta=-1$ beschreiben, [... to be continued]
+        Für bestimmte Gleichungen 3. Grades können alle ihre reellen Lösungen mit Lösungen von $x^{3}=\alpha$ und $x^{2}=\beta=-1$ beschrieben werden,
+        sofern man mit diesen Lösungen wie in $\mathbb{R}$ rechnet.\\\\
+        Ergebnis: Einführung einer neuen Zahl i mit $i^{2} = -1$
+        Damit waren die imaginären bzw. komplexen Zahlen erfunden.\\
+        $\rightarrow$ Blüte des 19. Jahrhunderts 
+    \item Galois, Abel (19. Jht.)\\
+        Für die Lösungen der Gleichung $\sum_{k=0}^{n}a_{k}x^{k} = 0$ gibt es nur für $n\leq4$ allgemeingültige,
+        von den Koeffizienten $a_{k}$ abhängige, Lösungsformeln.\\
+        Für $n\geq5$ gibt es $\underline{keine}$ allgemeingültigen Formeln.
 \end{enumerate}
+\subsection{Der Körper der komplexen Zahlen \quad \; (Hartmann 5.3)}
+    Wir definieren: $\mathbb{C} = \{ (a,b) | a,b \in \mathbb{Q}\}$\\
+    Gleichheit: $(a,b),(c,d) \in \mathbb{C}, (a,b)=(c,d) \Leftrightarrow a=c, b=d\\
+    "\!+\!":\mathbb{C}\times\mathbb{C}\rightarrow\mathbb{C},((a,b),(c,d))\mapsto ((a,b)+(c,d))=(a+c,b+d)\\
+    "\ast":\mathbb{C}\times\mathbb{C}\rightarrow\mathbb{C},((a,b),(c,d))\mapsto ((a,b)\ast(c,d))=(a\ast c-b\ast d,a\ast d+b\ast c) $
+\setcounter{theorem}{2}
+\begin{subtheorem}
+    Es gilt $(\mathbb{C},"+","\ast")$ ist ein Körper, d.h.
+    \begin{enumerate}
+        \item $(\mathbb{C},"+")$ ist eine abelsche Gruppe mit dem neutralen Element $(0,0) = 0_{\mathbb{C}}$
+        \item $(\mathbb{C}\setminus \{0_{\mathbb{C}}\},"\ast")$ ist eine abelsche Gruppe mit dem neutralen Element\\
+         $(1,0)=1_{\mathbb{C}}$;\, inverses Element: weiter unten.
+         \item Distributivgesetz: $\forall x,y,z\in\mathbb{C}:(x+y)\ast z=x\ast z+y\ast z$\\
+         Beweis: Nachrechnen als Übung.
+
+    \end{enumerate}
+\end{subtheorem}
 \end{document}
