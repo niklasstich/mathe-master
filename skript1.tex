@@ -1,11 +1,17 @@
 \documentclass{article}
+\usepackage{amsthm}
 \usepackage{mathtools}
 \usepackage{amsfonts}
 \usepackage{enumerate}
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 
+\theoremstyle{definition}
 \newtheorem{theorem}{Satz}[section]
+\theoremstyle{definition}
+\newtheorem{subtheorem}{Satz}[theorem]
+\newtheorem{example}{Beispiel}[theorem]
+
 
 \title{Mathematik (Master) für Informatik Skript}
 \date{SoSe 2021}
@@ -52,9 +58,84 @@ bekannt war:
         Aber für ${a_{2}=1,\,a_{0},\,a_{0}=-2}$ ergibt sich: $x_{1/2} = \pm \sqrt{2}\notin \mathbb{Q}$.\\
         Folge: Erweiterung von $\mathbb{Q}$ zu $\mathbb{Q}(\sqrt{2})=\{a + b\sqrt{2}\,|\,a,b\in\mathbb{Q}\}$.
         $\mathbb{Q}(\sqrt{2})$ ist ein Körper, in dem wie in $\mathbb{Q}$ gerechnet werden kann und in dem die Lösungen von $x^{2}=2$ existieren.
-
-    \item Für Gleichungen 3. Grades keine allgemeine Lösungsformel, jedoch für spezielle Gleichungen\\
+    \item Für Gleichungen 3. Grades keine allgemeine Lösungsformel, jedoch für spezielle Gleichungen\\\\
         Cardano: \\
-        Für bestimmte Gleichungen 3. Grades können alle ihre reellen Lösungen mit Lösungen von $x^{3}=\alpha$ und $x^{2}=\beta=-1$ beschreiben, [... to be continued]
+        Für bestimmte Gleichungen 3. Grades können alle ihre reellen Lösungen mit Lösungen von $x^{3}=\alpha$ und $x^{2}=\beta=-1$ beschrieben werden,
+        sofern man mit diesen Lösungen wie in $\mathbb{R}$ rechnet.\\\\
+        Ergebnis: Einführung einer neuen Zahl i mit $i^{2} = -1$
+        Damit waren die imaginären bzw. komplexen Zahlen erfunden.\\
+        $\rightarrow$ Blüte des 19. Jahrhunderts 
+    \item Galois, Abel (19. Jht.)\\
+        Für die Lösungen der Gleichung $\sum_{k=0}^{n}a_{k}x^{k} = 0$ gibt es nur für $n\leq4$ allgemeingültige,
+        von den Koeffizienten $a_{k}$ abhängige, Lösungsformeln.\\
+        Für $n\geq5$ gibt es \underline{keine} allgemeingültigen Formeln.
+\end{enumerate}
+\subsection{Der Körper der komplexen Zahlen \quad \; (Hartmann 5.3)}
+    Wir definieren: $\mathbb{C} = \{ (a,b) | a,b \in \mathbb{Q}\}$\\
+    Gleichheit: $(a,b),(c,d) \in \mathbb{C}, (a,b)=(c,d) \Leftrightarrow a=c, b=d\\
+    "\!+\!":\mathbb{C}\times\mathbb{C}\rightarrow\mathbb{C},((a,b),(c,d))\mapsto ((a,b)+(c,d))=(a+c,b+d)\\
+    "\ast":\mathbb{C}\times\mathbb{C}\rightarrow\mathbb{C},((a,b),(c,d))\mapsto ((a,b)\ast(c,d))=(a\ast c-b\ast d,a\ast d+b\ast c) $
+\setcounter{theorem}{2}
+\begin{subtheorem}\,\\
+    Es gilt $(\mathbb{C},"+","\ast")$ ist ein Körper, d.h.
+    \begin{enumerate}
+        \item $(\mathbb{C},"+")$ ist eine abelsche Gruppe mit dem neutralen Element $(0,0) = 0_{\mathbb{C}}$
+        \item $(\mathbb{C}\setminus \{0_{\mathbb{C}}\},"\ast")$ ist eine abelsche Gruppe mit dem neutralen Element\\
+         $(1,0)=1_{\mathbb{C}}$;\, inverses Element: weiter unten.
+         \item Distributivgesetz: $\forall x,y,z\in\mathbb{C}:(x+y)\ast z=x\ast z+y\ast z$\\
+         Beweis: Nachrechnen als Übung.
+    \end{enumerate}
+\end{subtheorem}
+Wir sehen sofort: $M=\{(x,0)|x\in \mathbb{R}\}\subset \mathbb{C}$ bildet mit $"+"$ und $"\ast"$ in $\mathbb{C}$ einen Unterkörper
+und $\Phi :M\rightarrow\mathbb{R},(x,0)\mapsto \Phi((x,0))=x$ ist eine Bijektion.\\
+Außerdem gilt:\\
+$\Phi ((a,0)+(b,0))=\Phi ((a,0))+\Phi ((b,0))\\
+\Phi((a,0)\ast (b,0)) = \Phi((a,0))\ast \Phi((b,0))\\
+\Phi$ ist also ein Körperisomorphismus (Hartmann) $M\widehat{=}\mathbb{R}$.
+Wir finden also mit $M$ die reellen Zahlen in $\mathbb{C}$ wieder.\\
+Insbesondere entspricht der Gleichung $x^{2}=-1$ in $\mathbb{C}$ die Gleichung\\
+$(a,b)\ast (a,b)=(-1,0)$\\
+Wie erwartet, gibt es für diese Gleichung in $\mathbb{C}$ eine Lösung\\
+\\
+$\underline{\text{Lösung der Gleichung}\;(a,b)\ast (a,b)=(-1,0)}$\\
+Ansatz: $(a,b)\ast (a,b) = (a^{2}-b^{2},2ab)=(-1,0)$\\
+Komponentenvergleich: $a^{2}-b^{2}=-1,\,2ab=0$\\
+Man erhält: $a=0, b=\pm 1\Leftrightarrow (0,\pm 1)\in\mathbb{C}$\\
+Wir setzen $i=(0,1),\; -i=(0,-1)$\\
+$i$ und $-i$ sind die Lösungen der Gleichung in $\mathbb{C}$\\
+\\
+$\underline{\text{Realteil und Imaginärteil einer kompelxen Zahl}}$\\
+\\
+Geg: $z=(x,y)\in \mathbb{C}\quad (w=(u,v)\in \mathbb{C})$\\
+Wir nennen $x:\text{Realteil von z;}\; Re(z)=x\in\mathbb{R}$\\
+Wir nennen $y:\text{Imaginärteil von z;}\; Im(z)=y\in\mathbb{R}$\\
+\\
+\setcounter{example}{1}
+\begin{example}\,\\
+    $Re(1,0)=1,\quad Im(1,0)=0\\
+    Re(1,3)=1,\quad Im(1,3)=3\\
+    w=(u,v),\quad Re(w)=u,\, Im(w=v)$
+\end{example}
+\underline{Vereinfachung der Notation}\\
+Wir betrachten\quad $z=(x,y)\in\mathbb{C},\quad (x,0),(y,0)\in M\cong\mathbb{R},\;(0,1)=i$\\
+und rechnen leicht nach:\\
+$z=(x,0)+\underbrace{(0.1)\ast (y,0)}_{\underbrace{(0\ast y-1\ast 0,0+y)}_{(0,y)}}=(x,y)$\\
+Wir kürzen ab: $x\widehat{=}(x,0), y\widehat{=}(y,0),i\widehat{=}(0,1)$\\
+Wir erhalten damit \underline{z=x+i*y}\\
+Bemerkung: $\underbrace{1\widehat{=}(1,0)}_{=1_{\mathbb{C}}}:\quad z=x\ast 1_{\mathbb{C}}+y\ast i,\quad x,y\in\mathbb{R}$\\
+Im Weiteren verwenden wir für die Darstellung einer komplexen Zahl \\
+$z=(x,y)\in\mathbb{C}$:\quad$z=x+iy\;\text{mit}\; x,y\in\mathbb{R},\; i=(0,1),\; i^{2}=(-1,0)$\\
+Wir beschreiben diese Darstellung der komplexen Zahlen als \underline{karthesische Darstellung}\\
+\\
+\underline{Rechnen mit komplexen Zahlen in kartesischer Darstellung}
+Seien $w=u+iv,\; z=x+iy\;$zwei komplexe Zahlen.
+\begin{enumerate}
+    \item Gleichheit komplexer Zahlen\\
+          w und z sind gleich, wenn gilt:\quad$\underline{u=x,\; v=y}$\\
+    \item Addition und Multiplikation\\
+          Für Addition $"+"$ und Multiplikation $"\ast"$ von w und z gilt:\\
+          $\underline{w+z=(u+x)+i(v+y)}\\
+          \underline{w\ast z=(ux - vy)+i(uy+vx)}$
+    \item To be continued
 \end{enumerate}
 \end{document}
